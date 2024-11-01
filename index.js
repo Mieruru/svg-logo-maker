@@ -1,5 +1,6 @@
 // import modules
 const inquirer = require('inquirer')
+const fs = require('fs')
 
 // array of user prompts
 
@@ -26,6 +27,14 @@ const prompts = [
     message: 'Please enter a color for the shape:'
   }
 ]
+
+// function to write file
+function writeToFile(filename, data) {
+  fs.writeFile(filename, data, (err) => {
+    err ? console.log(err) :
+      console.log(`Generated logo.svg`)
+  })
+}
 
 // function to initialize app
 function init() {
