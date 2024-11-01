@@ -1,6 +1,7 @@
 // import modules
 const inquirer = require('inquirer')
 const fs = require('fs')
+const generateLogo = require('./lib/generateLogo.js')
 
 // array of user prompts
 
@@ -38,7 +39,12 @@ function writeToFile(filename, data) {
 
 // function to initialize app
 function init() {
-
+  inquirer.prompt(prompts)
+    .then((data) => {
+      console.log(data)
+      console.log(`Generating logo.svg...`)
+      writeToFile('./dist/logo.svg', generateLogo(data))
+    })
 }
 
 // initialize app
