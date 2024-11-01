@@ -40,10 +40,16 @@ function writeToFile(filename, data) {
 // function to initialize app
 function init() {
   inquirer.prompt(prompts)
-    .then((data) => {
+    .then(data => {
       console.log(data)
+      // destructure prompt data into individual object properties
+      const { text, fontColor, shape, shapeColor } = data
+
+      // pass properties to generateLogo function
+      const { svgContent } = generateLogo({ text, fontColor, shape, shapeColor })
+
       console.log(`Generating logo.svg...`)
-      writeToFile('./dist/logo.svg', generateLogo(data))
+      writeToFile('./dist/logo.svg', svgContent)
     })
 }
 
