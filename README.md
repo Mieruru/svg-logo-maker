@@ -1,4 +1,4 @@
-# README generator
+# SVG Logo Maker
 
 [![GitHub License](https://img.shields.io/badge/license-MIT_License-006400.svg)](https://opensource.org/license/mit)
 
