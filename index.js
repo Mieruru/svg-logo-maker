@@ -41,7 +41,7 @@ function writeToFile(filename, data) {
 function init() {
   inquirer.prompt(prompts)
     .then(data => {
-      console.log(data)
+      // console.log(data)
       // destructure prompt data into individual object properties
       const { text, fontColor, shape, shapeColor } = data
 
