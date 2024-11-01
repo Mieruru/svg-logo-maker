@@ -9,7 +9,9 @@ const prompts = [
   {
     type: 'input',
     name: 'text',
-    message: 'Please enter up to three characters:'
+    message: 'Please enter up to three characters:',
+    // validation catch for too many characters
+    validate: input => input.length <= 3 || 'ERR: Too many characters. Please enter up to three characters:'
   },
   {
     type: 'input',
